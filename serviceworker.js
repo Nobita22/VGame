@@ -1,49 +1,19 @@
-const cacheName = 'VGame';
-const staticAssets = [
-    './',
-    './index.html',
-    './index.css',
-    './index2.css',
-    '.index2.js',
-    '.index2.html',
-    './index.js',
-];
+var staticCacheName = "VGame";
 
-self.addEventListener('install', async e => {
-    const cache = await caches.open(cacheName);
-    await cache.addAll(staticAssets);
-    return self.skipWaiting();
+self.addEventListener("install", function (e) {
+    e.waitUntil(
+        caches.open(staticCacheName).then(function (cache) {
+            return cache.addAll(["/"]);
+        })
+    );
 });
 
-self.addEventListener('activate', e => {
-    self.clients.claim();
+self.addEventListener("fetch", function (event) {
+    console.log(event.request.url);
+
+    event.respondWith(
+        caches.match(event.request).then(function (response) {
+            return response || fetch(event.request);
+        })
+    );
 });
-
-self.addEventListener('fetch', async e => {
-    const req = e.request;
-    const url = new URL(req.url);
-
-    if (url.origin === location.origin) {
-        e.respondWith(cacheFirst(req));
-    } else {
-        e.respondWith(networkAndCache(req));
-    }
-});
-
-async function cacheFirst(req) {
-    const cache = await caches.open(cacheName);
-    const cached = await cache.match(req);
-    return cached || fetch(req);
-}
-
-async function networkAndCache(req) {
-    const cache = await caches.open(cacheName);
-    try {
-        const fresh = await fetch(req);
-        await cache.put(req, fresh.clone());
-        return fresh;
-    } catch (e) {
-        const cached = await cache.match(req);
-        return cached;
-    }
-}
