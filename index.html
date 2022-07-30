@@ -5,49 +5,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login + Firebase Database</title>
-    <!-- Cool Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
-    <!-- Our stylesheet -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js"></script>
     <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>
-    <div id="content_container">
-        <div id="form_container">
-            <div id="form_header_container">
-                <h2 id="form_header"> Login + Firebase Database </h2>
-            </div>
+    <div class="top-stats">
+        <button id="settingsbutton" class="settingsbutton"></button>
 
-            <div id="form_content_container">
-                <div id="form_content_inner_container">
-                    <input type="text" id="full_name" placeholder="ID">
-                    <input type="email" id="email" placeholder="Email">
-                    <input type="password" id="password" placeholder="New Password">
-                    <div id="button_container">
-                        <button onclick="login()">Login</button>
-                        <button onclick="register()">Register</button>
-                    </div>
+    </div>
+    <div id='screens' class="screens">
+        <h1>HOME</h1>
+    </div>
 
-                </div>
-            </div>
+    <div id="navbar" class="navbar">
+        <div id="nav_buttons" class=" nav_buttons">
+            <button id="mysystem" onClick='loadHtml("screens","mysystem.html")'>MY SYSTEM </button>
+            <button id="crew" onClick='loadHtml("screens","crew.html")'>CREW </button>
+            <button id="network" onClick='loadHtml("screens","network.html")'>NETWORK </button>
+            <button id="log" onClick='loadHtml("screens","log.html")'>LOG</button>
+            <button id="collection" onClick='loadHtml("screens","collection.html")'> COLLECTION</button>
+        </div>
+        <div id="home" class="home">
+            <button id="home_button" onclick="location.href='index.html'">HOME</button>
         </div>
     </div>
+
+
+
 </body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-
-<!-- Our script must be loaded after firebase references -->
-<script src="index.js"></script>
 <script>
     window.addEventListener('load', () => {
         registerSW();
