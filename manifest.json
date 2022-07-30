@@ -1,0 +1,15 @@
+{
+    "name": "VGame",
+    "short_name": "VG",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "blahblahblah",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "200x200",
+            "type": "image/png"
+        }
+    ]
+}
