@@ -1,15 +1,16 @@
 .top-stats {
     background-color: rgb(37, 36, 37);
     width: 100%;
-    height: 150px;
+    height: 55px;
 }
 
 .settingsbutton {
 
-    background: url(settingicon90.png) no-repeat;
-    height: 94px;
-    width: 94px;
-    margin-top: 26px;
+    background: url(settingicon60.png) no-repeat;
+    background-size: 40px 40px;
+    height: 43px;
+    width: 43px;
+    margin-top: 6.5px;
 
 }
 
@@ -33,10 +34,10 @@
 
 .nav_buttons button {
 
-    width: 500px;
+    width: 100px;
 
     text-decoration: none;
-    height: 190px;
+    height: 50px;
     text-align: center;
     overflow: hidden;
 
@@ -47,8 +48,8 @@
 }
 
 .home button {
-    height: 90px;
-    width: 300px;
+    height: 30px;
+    width: 200px;
 
 }
 
