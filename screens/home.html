@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login + Firebase Database</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body id="body">
+
+    <div class="top-stats">
+        <button id="settingsbutton" class="settingsbutton" onclick='loadHtml("body","settings.html")'></button>
+        <!--<p id="diplay_id" class="display_id">sameer</pc>-->
+
+    </div>
+    <div id='screens' class="screens">
+        <center>
+            <h1>HOME SCREEN.....</h1>
+        </center>
+    </div>
+
+    <div id="navbar" class="navbar">
+        <div id="nav_buttons" class=" nav_buttons">
+            <button id="mysystem" onClick='loadHtml("screens","mysystem.html")'>MY SYSTEM </button>
+            <button id="crew" onClick='loadHtml("screens","crew.html")'>CREW </button>
+            <button id="network" onClick='loadHtml("screens","network.html")'>NETWORK </button>
+            <button id="log" onClick='loadHtml("screens","log.html")'>LOG</button>
+            <button class="collection" id="collection" onClick='loadHtml("screens","collection.html")'>
+                vNFT COLLECTION</button>
+        </div>
+        <div id="home" class="home">
+            <button id="home_button" onclick='loadHtml("body","home.html")'>HOME</button>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+</html>

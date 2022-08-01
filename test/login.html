@@ -6,26 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login + Firebase Database</title>
 
-    <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 
-<body id="body">
+<body>
     <div class="forms-out">
         <div class="forms-in">
             <div id="registration-page" class="hide">
                 <button id="show-login">Sign In</button>
                 <h3>Sign Up</h3>
+                Name <br />
+                <input type="text" id="registration-name" /><br />
                 ID <br />
-                <input type="text" id="registration-id" /><br />
+                <input type="email" id="registration-id" /><br />
                 Email <br />
-                <input type="email" id="registration-email" /><br />
-                Confirm Email <br />
-                <input type="email" id="registration-reemail" autocomplete="disable" /><br />
+                <input type="email" id="registration-email" autocomplete="disable" /><br />
                 Password <br />
                 <input type="password" id="registration-password" /><br />
-                <center><button id="register">Sign Up</button></center>
+                <center><button id="register" onclick="register()">Sign Up</button></center>
             </div>
 
             <div id="login-page">
@@ -49,27 +48,22 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-
 </body>
-<script src="index.js"></script>
 <script>
-    window.addEventListener('load', () => {
-        registerSW();
-    });
+    //invokes firebase authentication. 
 
-    // Register the Service Worker
-    async function registerSW() {
-        if ('serviceWorker' in navigator) {
-            try {
-                await navigator
-                    .serviceWorker
-                    .register('serviceworker.js');
-            }
-            catch (e) {
-                console.log('SW registration failed');
-            }
-        }
-    }
+    const firebaseConfig = {
+        apiKey: "AIzaSyDYC1T69Ue1f07xVbpexF6JHHc-dw7iNxI",
+        authDomain: "gv01-f36e8.firebaseapp.com",
+        databaseURL: "https://gv01-f36e8-default-rtdb.firebaseio.com",
+        projectId: "gv01-f36e8",
+        storageBucket: "gv01-f36e8.appspot.com",
+        messagingSenderId: "911524810717",
+        appId: "1:911524810717:web:be1bf2a915bc5ffcb27034"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 </script>
+<script src="login.js"></script>
 
 </html>
