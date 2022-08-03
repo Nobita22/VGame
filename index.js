@@ -242,4 +242,3 @@ ref.on("value", function (snapshot) {
 }, function (error) {
     console.log("Error: " + error.code);
 });
-
