@@ -202,6 +202,18 @@ function settings() {
     var v = document.getElementById("navbar"); v.style.display = "none";
     var v = document.getElementById("settings"); v.style.display = "block";
 }
+function backtohome() {
+    var v = document.getElementById("home"); v.style.display = "block";
+    var v = document.getElementById("crew"); v.style.display = "none";
+    var v = document.getElementById("network"); v.style.display = "none";
+    var v = document.getElementById("log"); v.style.display = "none";
+    var v = document.getElementById("collection"); v.style.display = "none";
+    var v = document.getElementById("mysystem"); v.style.display = "none";
+    var v = document.getElementById("forms-out"); v.style.display = "none";
+    var v = document.getElementById("top-stats"); v.style.display = "block";
+    var v = document.getElementById("navbar"); v.style.display = "block";
+    var v = document.getElementById("settings"); v.style.display = "none";
+}
 function mysystem() {
     var v = document.getElementById("home"); v.style.display = "none";
     var v = document.getElementById("crew"); v.style.display = "none";
