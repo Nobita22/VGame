@@ -192,3 +192,19 @@ body {
 .logoutbutton:hover {
     opacity: 0.7;
 }
+
+#back-button {
+    position: absolute;
+    text-indent: -15px;
+    padding: 5px 0 5px 10px;
+
+
+
+    background: url(left-arrow.png) no-repeat;
+    background-color: rgb(204, 203, 203);
+    background-size: 40px 40px;
+    height: 44px;
+    width: 44px;
+    margin-top: 5.6px;
+    border-radius: 26px 26px 26px 26px;
+}
