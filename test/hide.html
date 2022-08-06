@@ -6,12 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="index.js"></script>
-
+    <script src="hide.js"></script>
 </head>
 
 <body>
-    <center><button class="logoutbutton" id="signout" onClick='signOut()'>Sign Out</button></center>
+
+    <div id="hidden">
+        <p>
+        <h1>HIDDEN</h1>
+        </p>
+    </div>
+    <div id="main">
+        <p>
+        <h1>MAIN DIV</h1>
+        </p>
+    </div>
+    <button onclick="showOrHideDiv()">CHANGE</button>
+
 </body>
 
 </html>

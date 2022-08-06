@@ -1,22 +1,3 @@
-function loadHtml(id, filename) {
-    console.log(`div id:${id}, filename:${filename}`)
-    let xhttp;
-    let element = document.getElementById(id);
-    let file = filename;
-    if (file) {
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                if (this.status == 200) { element.innerHTML = this.responseText; }
-                if (this.status == 400) { element.innerHTML = "<h1>Page Not Found</h1>" }
-            }
-        }
-        //element.innerHTML = this.response;
-        xhttp.open("GET", `screens/${file}`, true);
-        xhttp.send();
-        return;
-    }
-}
 var firebaseConfig = {
     apiKey: "AIzaSyCeP1lZE5z44YyzjoGz1UZAR1raUBeZqPk",
     authDomain: "v001-91065.firebaseapp.com",
@@ -48,18 +29,10 @@ function login() {
 };
 var database = firebase.database()
 function register() {
+
     const email = document.querySelector("#registration-email").value;
     const reemail = document.querySelector("#registration-reemail").value;
     const password = document.querySelector("#registration-password").value;
-
-
-    // database.ref('users/' + id).set({
-    //     email: email,
-    //     name: id,
-    //     password: password
-
-
-    // })
     if (email.trim() == "") {
         alert("Enter Email");
     } else if (password.trim().length < 7) {
@@ -67,27 +40,15 @@ function register() {
     } else if (email != reemail) {
         alert("emails do not match");
     } else {
-        auth.createUserWithEmailAndPassword(email, password)
-            //.then
-            // Save user here.
-            // firebase.database().ref('users/' + user.uid).set({
-
-            //     email: email,
-            //     uid: users.user.uid
-            // })
-
-            .catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                console.log(errorMessage);
-                // ...
-
-            });
+        auth.createUserWithEmailAndPassword(email, password).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorMessage);
+        })
         console.log("REgistered")
-
-
     }
+
     delay(1000).then(() => authenticate(email, password)
     );
     var v = document.getElementById("home"); v.style.display = "none";
@@ -95,16 +56,6 @@ function register() {
     var v = document.getElementById("top-stats"); v.style.display = "none";
     var v = document.getElementById("navbar"); v.style.display = "none";
     var v = document.getElementById("details-page"); v.style.display = "block";
-
-
-    // database.ref('users/' + id).set({
-    //     email: email,
-    //     name: id,
-    //     password: password
-
-
-    // })
-
 }
 function authenticate(email, password) {
 
@@ -126,6 +77,7 @@ function showRegister() {
     var v = document.getElementById("registration-page"); v.style.display = "block";
     var v = document.getElementById("login-page"); v.style.display = "none";
 }
+
 function submitDetails() {
 
     firebase.auth().currentUser.updateProfile({
@@ -146,10 +98,12 @@ function submitDetails() {
     var v = document.getElementById("details-page"); v.style.display = "none";
 }
 function updateLog() {
-    u = firebase.auth().currentUser.displayName;//FirebaseAuth.getInstance().getCurrentUser().getUid()
+    u = firebase.auth().currentUser.uid;//FirebaseAuth.getInstance().getCurrentUser().getUid()
     console.log("after change:", u)
 }
-
+// firebase.auth().currentUser.updateProfile({
+//     displayName: document.getElementById("registration-name").value
+// })
 auth.onAuthStateChanged((firebaseUser) => {
     console.log("hello", firebaseUser.displayName)
     if (firebaseUser.displayName == null) {
@@ -273,71 +227,3 @@ function signOut() {
 //             register();
 //         }
 //     });
-document
-    .querySelector("#forgot-password")
-    .addEventListener("click", () => {
-        const email = document.querySelector("#login-email").value;
-        if (email.trim() == "") {
-            alert("Enter Email");
-        } else {
-            forgotPassword(email);
-        }
-    });
-
-const forgotPassword = (email) => {
-    auth
-        .sendPasswordResetEmail(email)
-        .then(function () {
-            alert("email sent");
-        })
-        .catch(function (error) {
-            alert("invalid email or bad network connection");
-        });
-};
-
-
-function get() {
-    console.log("getting")
-
-    var user_ref = database.ref('users/' + id)
-    user_ref.on('value', function (snapshot) {
-        var data = snapshot.val()
-        console.log(data.id)
-    })
-}
-//const rootRef = database.ref('users');
-
-// ------------------------------------//
-
-//Check if signed in
-//firebase.auth().onAuthStateChanged(function (user) {
-//    if (user) {
-//        console.log("usernowww", user)
-//        currentU = firebase.auth().currentUser
-//        console.log("****", currentU)
-//        database.ref('users/' + user.uid.name).on("value", snap => {
-//            console.log("----", snap.val())
-
-//        })
-//        console.log(user.name)
-// User is signed in.
-
-//        database.ref('/users/' + user.name).on('value')
-//            .then(function (snapshot) {
-//                console.log(snapshot.val)
-//               document.getElementById("display_id").innerText = snapshot.val().name;
-//          })
-//} else {
-//  console.log("no data")
-//}
-//});
-
-// var ref = firebase.database().ref();
-// ref.on("value", function (snapshot) {
-//     data = snapshot.val().users
-//     list = [data]
-//     console.log("all", data);
-//     console.log("list", list)
-// }, function (error) {
-//     console.log("Error: " + error.code);
-// });
