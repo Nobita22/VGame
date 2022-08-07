@@ -46,6 +46,7 @@ function login() {
 
     }
 };
+var AuthId = ""
 var database = firebase.database()
 function register() {
     const email = document.querySelector("#registration-email").value;
@@ -194,7 +195,7 @@ auth.onAuthStateChanged((firebaseUser) => {
     window.localStorage.setItem('useruid', AuthId);
     b = window.localStorage.getItem('useruid');
     console.log("AuthId", b)
-    id = "hello"
+    var id = "hello"
     if (firebaseUser) {
         var AuthId = firebaseUser.uid
         console.log("ifTrue", AuthId)
@@ -203,6 +204,7 @@ auth.onAuthStateChanged((firebaseUser) => {
             data = snapshot.val().users
             list = [data]
             id = data[AuthId].UserId
+            window.localStorage.setItem('userID', id);
             document.getElementById("display_id").innerText = "welcom " + id;
             console.log("all", id);
             console.log("list", list)
@@ -224,7 +226,7 @@ function settings() {
     var v = document.getElementById("crew"); v.style.display = "none";
     var v = document.getElementById("network"); v.style.display = "none";
     var v = document.getElementById("log"); v.style.display = "none";
-    var v = document.getElementById("collection"); v.style.display = "none";
+    var v = document.getElementById("chat"); v.style.display = "none";
     var v = document.getElementById("mysystem"); v.style.display = "none";
     var v = document.getElementById("forms-out"); v.style.display = "none";
     var v = document.getElementById("top-stats"); v.style.display = "none";
@@ -236,7 +238,7 @@ function backtohome() {
     var v = document.getElementById("crew"); v.style.display = "none";
     var v = document.getElementById("network"); v.style.display = "none";
     var v = document.getElementById("log"); v.style.display = "none";
-    var v = document.getElementById("collection"); v.style.display = "none";
+    var v = document.getElementById("chat"); v.style.display = "none";
     var v = document.getElementById("mysystem"); v.style.display = "none";
     var v = document.getElementById("forms-out"); v.style.display = "none";
     var v = document.getElementById("top-stats"); v.style.display = "block";
@@ -248,14 +250,14 @@ function mysystem() {
     var v = document.getElementById("crew"); v.style.display = "none";
     var v = document.getElementById("network"); v.style.display = "none";
     var v = document.getElementById("log"); v.style.display = "none";
-    var v = document.getElementById("collection"); v.style.display = "none";
+    var v = document.getElementById("chat"); v.style.display = "none";
     var v = document.getElementById("mysystem"); v.style.display = "block";
 }
 function crew() {
     var v = document.getElementById("home"); v.style.display = "none";
     var v = document.getElementById("network"); v.style.display = "none";
     var v = document.getElementById("log"); v.style.display = "none";
-    var v = document.getElementById("collection"); v.style.display = "none";
+    var v = document.getElementById("chat"); v.style.display = "none";
     var v = document.getElementById("mysystem"); v.style.display = "none";
     var v = document.getElementById("crew"); v.style.display = "block";
 }
@@ -263,7 +265,7 @@ function network() {
     var v = document.getElementById("home"); v.style.display = "none";
     var v = document.getElementById("network"); v.style.display = "block";
     var v = document.getElementById("log"); v.style.display = "none";
-    var v = document.getElementById("collection"); v.style.display = "none";
+    var v = document.getElementById("chat"); v.style.display = "none";
     var v = document.getElementById("mysystem"); v.style.display = "none";
     var v = document.getElementById("crew"); v.style.display = "none";
 }
@@ -271,15 +273,15 @@ function log() {
     var v = document.getElementById("home"); v.style.display = "none";
     var v = document.getElementById("network"); v.style.display = "none";
     var v = document.getElementById("log"); v.style.display = "block";
-    var v = document.getElementById("collection"); v.style.display = "none";
+    var v = document.getElementById("chat"); v.style.display = "none";
     var v = document.getElementById("mysystem"); v.style.display = "none";
     var v = document.getElementById("crew"); v.style.display = "none";
 }
-function collection() {
+function chat() {
     var v = document.getElementById("home"); v.style.display = "none";
     var v = document.getElementById("network"); v.style.display = "none";
     var v = document.getElementById("log"); v.style.display = "none";
-    var v = document.getElementById("collection"); v.style.display = "block";
+    var v = document.getElementById("chat"); v.style.display = "block";
     var v = document.getElementById("mysystem"); v.style.display = "none";
     var v = document.getElementById("crew"); v.style.display = "none";
 }
@@ -287,7 +289,7 @@ function home() {
     var v = document.getElementById("home"); v.style.display = "block";
     var v = document.getElementById("network"); v.style.display = "none";
     var v = document.getElementById("log"); v.style.display = "none";
-    var v = document.getElementById("collection"); v.style.display = "none";
+    var v = document.getElementById("chat"); v.style.display = "none";
     var v = document.getElementById("mysystem"); v.style.display = "none";
     var v = document.getElementById("crew"); v.style.display = "none";
 }
@@ -376,3 +378,25 @@ function get() {
 //}
 //});
 
+function sendMessage() {
+    sender = window.localStorage.getItem('userID');
+
+    var message = document.getElementById("message").value
+    firebase.database().ref("messages").push().set({
+        "sender": sender,
+        "message": message
+    })
+    document.getElementById("message").value = ""
+    return false
+}
+firebase.database().ref("messages").on("child_added", function (snapshot) {
+    var html = ""
+    html += "<li>"
+    html += "<b >" + snapshot.val().sender + "</b>" + " : " + snapshot.val().message
+    html += "</li>"
+
+    document.getElementById("messages").innerHTML += html
+})
+////chat////
+
+////chat////

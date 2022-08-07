@@ -80,10 +80,23 @@
             <h1>NETWORK SCREEN....</h1>
         </center>
     </div>
-    <div id="collection" class="hide">
-        <center>
-            <h1>COLLECTION SCREEN....</h1>
-        </center>
+    <div id="chat" class="hide">
+        <div id="chat_box">
+            <div id="chat_area" class="chat_area">
+                <ul id="messages" style="list-style: none;">
+
+                </ul>
+            </div>
+
+            <div id="message_input">
+                <form id="message_box" onsubmit="return sendMessage()">
+                    <input id="message" placeholder="   Enter Message" autocomplete="off">
+                    <input id="message_submit" value="Send" type="submit">
+
+                </form>
+            </div>
+        </div>
+
     </div>
     <div id="log" class="hide">
         <center>
@@ -100,11 +113,12 @@
             <button id="crew" onClick="crew()">CREW </button>
             <button id="network" onClick='network()'>NETWORK </button>
             <button id="log" onClick='log()'>LOG</button>
-            <button id="collection" onClick='collection()'>
-                vNFT COLLECTION</button>
+            <button id="chat" onClick='chat()'>
+                CHAT</button>
         </div>
         <div id="home">
             <button id="home_button" onClick='home()'>HOME</button>
+
         </div>
     </div>
     <div id="settings" class="hide">
@@ -119,6 +133,7 @@
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </body>
 <script src="index.js"></script>
