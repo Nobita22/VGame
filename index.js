@@ -162,8 +162,11 @@ auth.onAuthStateChanged((firebaseUser) => {
     // u = firebase.auth().currentUser;//FirebaseAuth.getInstance().getCurrentUser().getUid()
     // console.log("after change:", u.uid)
     else {
+        a = "hi"
         if (firebaseUser) {
             console.log("Loged In");
+            a = "hello"
+            console.log(a)
             console.log(firebaseUser);
             // var today = new Date();
             // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -187,9 +190,35 @@ auth.onAuthStateChanged((firebaseUser) => {
             var v = document.getElementById("details-page"); v.style.display = "none";
         }
     }
+    var AuthId = firebaseUser.uid
+    window.localStorage.setItem('useruid', AuthId);
+    b = window.localStorage.getItem('useruid');
+    console.log("AuthId", b)
+    id = "hello"
+    if (firebaseUser) {
+        var AuthId = firebaseUser.uid
+        console.log("ifTrue", AuthId)
+        var ref = firebase.database().ref();
+        ref.on("value", function (snapshot) {
+            data = snapshot.val().users
+            list = [data]
+            id = data[AuthId].UserId
+            document.getElementById("display_id").innerText = "welcom " + id;
+            console.log("all", id);
+            console.log("list", list)
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+        return id
+    }
+    console.log("out of if", id)
+    b = window.localStorage.getItem('useruid');
 
 });
 
+function print() {
+    console.log("AuthId", b)
+}
 function settings() {
     var v = document.getElementById("home"); v.style.display = "none";
     var v = document.getElementById("crew"); v.style.display = "none";
@@ -263,6 +292,7 @@ function home() {
     var v = document.getElementById("crew"); v.style.display = "none";
 }
 function signOut() {
+    window.localStorage.clear();
     firebase
         .auth()
         .signOut()
@@ -310,12 +340,14 @@ const forgotPassword = (email) => {
 
 function get() {
     console.log("getting")
-
-    var user_ref = database.ref('users/' + id)
-    user_ref.on('value', function (snapshot) {
-        var data = snapshot.val()
-        console.log(data.id)
-    })
+    // var text = "Hello Dolly.";
+    // document.getElementById("display_id").innerHTML = "New text!";
+    //document.getElementById("display_id").innerHTML = text;
+    // var user_ref = database.ref('users/' + id)
+    // user_ref.on('value', function (snapshot) {
+    //     var data = snapshot.val()
+    //     console.log(data.id)
+    // })
 }
 //const rootRef = database.ref('users');
 
@@ -344,12 +376,3 @@ function get() {
 //}
 //});
 
-// var ref = firebase.database().ref();
-// ref.on("value", function (snapshot) {
-//     data = snapshot.val().users
-//     list = [data]
-//     console.log("all", data);
-//     console.log("list", list)
-// }, function (error) {
-//     console.log("Error: " + error.code);
-// });
