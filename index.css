@@ -1,154 +1,137 @@
 /*------------------------------------------------------------index.html------------------------------------------------------------*/
 
 .forms-out {
-    margin: 0 auto;
-    font-family: "Fira Sans", sans-serif;
-    padding: 15px 0;
+  margin: 0 auto;
+  font-family: "Fira Sans", sans-serif;
+  padding: 15px 0;
 }
 
 .forms-in {
-    width: 93%;
-    margin: 0 auto;
-    color: white;
-    padding: 15px 0;
+  width: 93%;
+  margin: 0 auto;
+  color: white;
+  padding: 15px 0;
 }
 
 .forms-in div {
-    padding: 30px 20px;
-    max-width: 350px;
-    margin: 0 auto;
-    background: #168ab8;
-    border-radius: 5px;
-    margin-bottom: 15px;
+  padding: 30px 20px;
+  max-width: 350px;
+  margin: 0 auto;
+  background: #168ab8;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 .forms-in h3 {
-    text-align: center;
+  text-align: center;
 }
 
 .forms-in input {
-    border: none;
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 3px;
+  border: none;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
 }
 
 .forms-in button {
-    border: none;
-    padding: 7px 20px;
-    background: #e8f8ff;
-    color: #168ab8;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+  border: none;
+  padding: 7px 20px;
+  background: #e8f8ff;
+  color: #168ab8;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .forms-in button:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 #forgot-password {
-    text-align: center;
-    font-size: 13px;
-    cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 #forgot-password:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 /*------------------------------------------------------------index.html------------------------------------------------------------*/
 /*------------------------------------------------------------home.html------------------------------------------------------------*/
 body {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #top-stats {
-    background-color: rgb(37, 36, 37);
-    width: 100%;
-    height: 55px;
-
-
+  background-color: rgb(37, 36, 37);
+  width: 100%;
+  height: 55px;
 }
 
 #userProfile {
-    background-color: #afa692;
-    height: 80px;
-    width: 100%;
-    display: inline-block;
+  background-color: #afa692;
+  height: 80px;
+  width: 100%;
+  display: inline-block;
 }
 
 #settingsbutton {
-
-    background: url(settingicon60.png) no-repeat;
-    background-color: rgb(204, 203, 203);
-    background-size: 40px 40px;
-    height: 44px;
-    width: 44px;
-    margin-top: 5.6px;
-    border-radius: 15px 15px 15px 15px;
-
+  background: url(settingicon60.png) no-repeat;
+  background-color: rgb(204, 203, 203);
+  background-size: 40px 40px;
+  height: 44px;
+  width: 44px;
+  margin-top: 5.6px;
+  border-radius: 15px 15px 15px 15px;
 }
-
-
-
-
 
 #navbar {
-    background-color: rgb(160, 160, 160);
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-
-
+  background-color: rgb(160, 160, 160);
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
-
 
 #nav_buttons {
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
 }
 
-
-
 #nav_buttons button {
-    border-radius: 15px 15px 15px 15px;
-    width: 100px;
-    align-items: center;
-    text-decoration: none;
-    height: 50px;
-    text-align: center;
-    overflow: hidden;
-
+  border-radius: 15px 15px 15px 15px;
+  width: 100px;
+  align-items: center;
+  text-decoration: none;
+  height: 50px;
+  text-align: center;
+  overflow: hidden;
 }
 
 #home {
-    text-align: center;
+  text-align: center;
 }
 
 #home_button {
-    height: 30px;
-    width: 200px;
-    border-radius: 15px 15px 15px 15px;
+  height: 30px;
+  width: 200px;
+  border-radius: 15px 15px 15px 15px;
 }
 
-
 /* Place the navbar at the bottom of the page, and make it stick */
-
 
 /* Style the links inside the navigation bar 
 .navbar button {
@@ -181,92 +164,313 @@ body {
 }*/
 /*------------------------------------------------------------home.html------------------------------------------------------------*/
 .logoutbutton {
-
-    border: none;
-    padding: 7px 20px;
-    background: #e8f8ff;
-    color: #168ab8;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+  border: none;
+  padding: 7px 20px;
+  background: #e8f8ff;
+  color: #168ab8;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-
-
 .logoutbutton:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 #back-button {
-    position: absolute;
-    text-indent: -15px;
-    padding: 5px 0 5px 10px;
+  position: absolute;
+  text-indent: -15px;
+  padding: 5px 0 5px 10px;
 
-
-
-    background: url(left-arrow.png) no-repeat;
-    background-color: rgb(204, 203, 203);
-    background-size: 40px 40px;
-    height: 44px;
-    width: 44px;
-    margin-top: 5.6px;
-    border-radius: 26px 26px 26px 26px;
+  background: url(left-arrow.png) no-repeat;
+  background-color: rgb(204, 203, 203);
+  background-size: 40px 40px;
+  height: 44px;
+  width: 44px;
+  margin-top: 5.6px;
+  border-radius: 26px 26px 26px 26px;
 }
 
 #chat {
-    padding-top: 0px;
-    margin-top: 0;
-
-
+  padding-top: 0px;
+  margin-top: 0;
 }
 
 #chat_box {
-    background-color: rgb(132, 156, 148);
-    height: calc(100vh - 80px);
-    margin-top: 0;
-    margin-left: 0;
-    padding-top: 0px;
-
+  background-color: rgb(132, 156, 148);
+  height: calc(100vh - 80px);
+  margin-top: 0;
+  margin-left: 0;
+  padding-top: 0px;
 }
 
 #chat_area {
-    height: calc(100vh - 186px);
-    margin-top: 0;
-    display: inline-block;
+  height: calc(100vh - 186px);
+  margin-top: 0;
+  display: inline-block;
 }
 
 #messages {
-    border-radius: 15px 15px 15px 15px;
-    padding: 2px;
-    list-style-type: none;
-
+  border-radius: 15px 15px 15px 15px;
+  padding: 2px;
+  list-style-type: none;
 }
 
 #message {
-    padding-top: 5px;
-    border-radius: 15px 15px 15px 15px;
-    height: 20px;
-    width: 70%;
-    text-align: left;
-    border: 3px solid #555;
-    margin-left: 7px;
+  padding-top: 5px;
+  border-radius: 15px 15px 15px 15px;
+  height: 20px;
+  width: 70%;
+  text-align: left;
+  border: 3px solid #555;
+  margin-left: 7px;
 }
 
 #message_submit {
-    padding-left: 25px;
-    padding-right: 25px;
-    height: 34px;
-    border-radius: 15px 15px 15px 15px;
-    border: 3px solid #555;
-    font-weight: 900;
-    margin-left: 10px;
-
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 34px;
+  border-radius: 15px 15px 15px 15px;
+  border: 3px solid #555;
+  font-weight: 900;
+  margin-left: 10px;
 }
-
 
 #message_input {
-
-    height: 39px;
-    position: relative;
-
+  height: 39px;
+  position: relative;
 }
+
+/* ccity */
+#CCity {
+  margin-top: 0;
+
+  background-color: rgb(192, 95, 207);
+  padding-top: 4px;
+  height: calc(100vh - 150px);
+  padding-bottom: 90px;
+}
+
+#places {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: rgb(156, 130, 212);
+  max-width: 1200px;
+  height: inherit;
+
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 100px;
+  display: grid;
+  grid-gap: 1rem;
+}
+/* place 1 ------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#targets {
+  text-align: center;
+}
+#targets button {
+  height: 100px;
+  width: 300px;
+}
+#target1button {
+  margin-left: 80px;
+  background: url(./targetpics/icons/1.jpg);
+  background-position: left;
+  background-repeat: repeat-y;
+}
+#target2button {
+  margin-right: 80px;
+  background: url(./targetpics/icons/2.jpg);
+  background-position: left;
+  background-repeat: repeat-y;
+}
+#target3button {
+  margin-left: 80px;
+  background: url(./targetpics/icons/3.jpg);
+  background-position: left;
+  background-repeat: repeat-y;
+}
+#target4button {
+  margin-right: 80px;
+  background: url(./targetpics/icons/4.jpg);
+  background-position: left;
+  background-repeat: repeat-y;
+}
+#target5button {
+  margin-left: 80px;
+  background: url(./targetpics/icons/5.jpg);
+  background-position: left;
+  background-repeat: repeat-y;
+}
+
+#place1 {
+  background-color: dodgerblue;
+  background-image: url(city1.png);
+  text-align: bottom;
+  margin-top: 0;
+  color: white;
+  padding: 1px;
+
+  height: 110px;
+}
+
+#target1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 95%;
+  padding-left: 18px;
+  margin-top: 100px;
+}
+
+#target1:hover {
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+#target1container {
+  padding: 2px 16px;
+}
+#target1pic {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 15%;
+}
+#closetarget1 {
+  margin-left: 40%;
+}
+#target2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 95%;
+  padding-left: 18px;
+}
+
+#target2:hover {
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+#target2container {
+  padding: 2px 16px;
+}
+#target2pic {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 15%;
+}
+#closetarget2 {
+  margin-left: 40%;
+}
+#target3 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 95%;
+  padding-left: 18px;
+}
+
+#target3:hover {
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+#target3container {
+  padding: 2px 16px;
+}
+#target3pic {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 15%;
+}
+#closetarget3 {
+  margin-left: 40%;
+}
+#target4 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 95%;
+  padding-left: 18px;
+}
+
+#target4:hover {
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+#target4container {
+  padding: 2px 16px;
+}
+#target4pic {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 15%;
+}
+#closetarget4 {
+  margin-left: 40%;
+}
+#target5 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 95%;
+  padding-left: 18px;
+}
+
+#target5:hover {
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+#target5container {
+  padding: 2px 16px;
+}
+#target1pic {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 15%;
+}
+#closetarget5 {
+  margin-left: 40%;
+}
+/* place 2---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#place2 {
+  background-color: rgb(186, 208, 231);
+
+  text-align: bottom;
+  margin-top: 0;
+  color: white;
+  padding: 1px;
+
+  height: 110px;
+}
+#place3 {
+  background-color: rgb(186, 208, 231);
+
+  text-align: bottom;
+  margin-top: 0;
+  color: white;
+  padding: 1px;
+
+  height: 110px;
+}
+#place4 {
+  background-color: rgb(186, 208, 231);
+
+  text-align: bottom;
+  margin-top: 0;
+  color: white;
+  padding: 1px;
+
+  height: 110px;
+}
+#place5 {
+  background-color: rgb(186, 208, 231);
+
+  text-align: bottom;
+  margin-top: 0;
+  color: white;
+  padding: 1px;
+
+  height: 110px;
+}
+
+/* ccity */

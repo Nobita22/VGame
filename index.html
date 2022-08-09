@@ -45,10 +45,13 @@
             <div class="forms-in">
                 <div id="login-page">
                     <h3>User Name</h3>
-                    <input type="text" id="user-name" placeholder="Enter your name" /><br />
-                    <input type="text" id="user-id" placeholder="Enter your charecter name" /><br />
+                    <input type="text" id="user-name" placeholder="Enter
+                            your name" /><br />
+                    <input type="text" id="user-id" placeholder="Enter your
+                            charecter name" /><br />
 
-                    <center><button id="login" onclick="submitDetails()">Sign In</button></center>
+                    <center><button id="login" onclick="submitDetails()">Sign
+                            In</button></center>
                 </div>
             </div>
         </div>
@@ -75,10 +78,15 @@
             <button id="ptint" onclick="print()">print</button>
         </center>
     </div>
-    <div id="network" class="hide">
-        <center>
-            <h1>NETWORK SCREEN....</h1>
-        </center>
+    <div id="CCity" class="hide">
+        <div id="places">
+            <button id="place1" onclick="openplace1()"></button>
+            <button id="place2">Coming Soon...</button>
+            <button id="place3">Coming Soon...</button>
+            <button id="place4">Coming Soon...</button>
+            <button id="place5">Coming Soon...</button>
+
+        </div>
     </div>
     <div id="chat" class="hide">
         <div id="chat_box">
@@ -90,9 +98,8 @@
 
             <div id="message_input">
                 <form id="message_box" onsubmit="return sendMessage()">
-                    <input id="message" placeholder="   Enter Message" autocomplete="off">
+                    <input id="message" placeholder=" Enter Message" autocomplete="off">
                     <input id="message_submit" value="Send" type="submit">
-
                 </form>
             </div>
         </div>
@@ -111,7 +118,7 @@
             <button id="mysystem" onClick="mysystem()">MY SYSTEM </button>
             <!--onClick='loadHtml("screens","mysystem.html")'-->
             <button id="crew" onClick="crew()">CREW </button>
-            <button id="network" onClick='network()'>NETWORK </button>
+            <button onClick='CCity()'>Cyber City </button>
             <button id="log" onClick='log()'>LOG</button>
             <button id="chat" onClick='chat()'>
                 CHAT</button>
@@ -125,16 +132,74 @@
         <button id="back-button" onclick="backtohome()"></button>
         <center><button class="logoutbutton" id="signout" onClick='signOut()'>Sign Out</button></center>
     </div>
+    <div id="place1div" class="hide">
+        <center>
+            <h1>Beginners Town</h1>
+        </center>
+
+        <div id="targets">
+            <button id="target1button" onclick="opentarget1()">Target 1</button><br>
+            <button id="target2button" onclick="opentarget2()">Target 2</button><br>
+            <button id="target3button" onclick="opentarget3()">Target 3</button><br>
+            <button id="target4button" onclick="opentarget4()">Target 4</button><br>
+            <button id="target5button" onclick="opentarget5()">Target 5</button>
+        </div>
+
+
+        <div id="target1" class="hide">
+            <img src="./targetpics/photos/1.jpg" id="target1pic">
+            <div class="target1container">
+                <h4><b>John Doe</b></h4>
+                <p>Architect & Engineer</p>
+
+            </div>
+            <button id="closetarget1">close</button>
+        </div>
+        <div id="target2" class="hide">
+            <img src="./targetpics/photos/2.jpg" id="target1pic">
+            <div class="target1container">
+                <h4><b>John Doe</b></h4>
+                <p>Architect & Engineer</p>
+
+            </div>
+            <button id="closetarget2">close</button>
+        </div>
+        <div id="target3" class="hide">
+            <img src="./targetpics/photos/3.jpg" id="target1pic">
+            <div class="target1container">
+                <h4><b>John Doe</b></h4>
+                <p>Architect & Engineer</p>
+
+            </div>
+            <button id="closetarget3">close</button>
+        </div>
+        <div id="target4" class="hide">
+            <img src="./targetpics/photos/4.jpg" id="target1pic">
+            <div class="target1container">
+                <h4><b>John Doe</b></h4>
+                <p>Architect & Engineer</p>
+
+            </div>
+            <button id="closetarget4">close</button>
+        </div>
+        <div id="target5" class="hide">
+            <img src="./targetpics/photos/5.jpg" id="target1pic">
+            <div class="target1container">
+                <h4><b>John Doe</b></h4>
+                <p>Architect & Engineer</p>
+
+            </div>
+            <button id="closetarget5">close</button>
+        </div>
+    </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 </body>
 <script src="index.js"></script>
 <script>
