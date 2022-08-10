@@ -143,6 +143,7 @@ function submitDetails() {
       Name: name,
       UserId: ID,
     });
+
   var v = document.getElementById("home");
   v.style.display = "block";
   var v = document.getElementById("forms-out");
@@ -182,19 +183,6 @@ auth.onAuthStateChanged((firebaseUser) => {
       a = "hello";
       console.log(a);
       console.log(firebaseUser);
-      // var today = new Date();
-      // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-      // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      // var dateTime = date + ' ' + time;
-
-      // console.log(dateTime)
-      // const createdAt = firebaseUser.metadata.creationTime
-      // console.log(createdAt)
-
-      // var v = document.getElementById("home"); v.style.display = "block";
-      // var v = document.getElementById("forms-out"); v.style.display = "none";
-      // var v = document.getElementById("top-stats"); v.style.display = "block";
-      // var v = document.getElementById("navbar"); v.style.display = "block";
 
       var v = document.getElementById("home");
       v.style.display = "block";
@@ -222,11 +210,15 @@ auth.onAuthStateChanged((firebaseUser) => {
       function (snapshot) {
         data = snapshot.val().users;
         list = [data];
-        id = data[AuthId].UserId;
-        window.localStorage.setItem("userID", id);
-        document.getElementById("display_id").innerText = "welcom " + id;
-        console.log("all", id);
         console.log("list", list);
+        id = data[AuthId].UserId;
+        console.log("all", id);
+        health = data[AuthId].health;
+        console.log("Health", health);
+        window.localStorage.setItem("userID", id);
+        document.getElementById("display_id").innerText = "ID: " + id;
+        document.getElementById("healthbar").value = health;
+        document.getElementById("totalhealth").innerText = health + "/240";
       },
       function (error) {
         console.log("Error: " + error.code);
@@ -398,16 +390,16 @@ function signOut() {
     });
 }
 
-//register when you hit the enter key
-// document
-//     .querySelector("#registration-password")
-//     .addEventListener("keyup", (e) => {
-//         if (event.keyCode === 13) {
-//             e.preventDefault();
+// register when you hit the enter key
+document
+  .querySelector("#registration-password")
+  .addEventListener("keyup", (e) => {
+    if (event.keyCode === 13) {
+      e.preventDefault();
 
-//             register();
-//         }
-//     });
+      register();
+    }
+  });
 document.querySelector("#forgot-password").addEventListener("click", () => {
   const email = document.querySelector("#login-email").value;
   if (email.trim() == "") {
@@ -538,7 +530,6 @@ function opentarget2() {
   var v = document.getElementById("targets");
   v.style.display = "none";
 }
-
 document
   .getElementById("closetarget2")
   .addEventListener("click", function handleClick(event) {
@@ -614,3 +605,35 @@ document
   });
 
 //city //
+// home page-------------------------------------------------------------------------------------------------------------------------------------
+function attack() {
+  deduct = 70;
+  firebase
+    .database()
+    .ref()
+    .on(
+      "value",
+      function (snapshot) {
+        data = snapshot.val().users;
+        list = [data];
+        console.log("list111", list);
+        healthfromdata = data[b].health;
+        console.log("all1111", healthfromdata);
+      },
+      function (error) {
+        console.log("Error: " + error.code);
+      }
+    );
+  if (healthfromdata > deduct) {
+    realhealth = healthfromdata - deduct;
+    console.log(realhealth);
+    firebase
+      .database()
+      .ref("users/" + b)
+      .update({ health: realhealth });
+    // healthfromdata = id;
+  } else {
+    alert("no Health");
+  }
+}
+// home page------------------------------------------------------------------------------------------------------------------------------------

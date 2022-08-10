@@ -57,14 +57,32 @@
         </div>
     </div>
     <div id="top-stats" class="hide">
-        <button id="settingsbutton" class="settingsbutton" onclick='settings()'></button>
+
+        <div class="lefte">
+            <p id="display_id" class="display_id">ID:</p><br>
+            <p id="level">Level:0</p><br>
+            <label id="health" style="color:white;float: left;" for="health">CHealth:</label>
+            <progress id="healthbar" value="240" max="240" style="width:60px;float: left;"></progress>
+            <label style="color:white;" id="totalhealth" for="health"></label>
+        </div>
+        <div class="centere">
+            <p style="margin:0 0 0 0;color: white;float: left;">money:</p></br>
+            <p style="margin:0 0 0 0;color: white;float: left;padding-top: 8px;">money2:</p>
+        </div>
+        <div class="righte">
+
+            <button id="settingsbutton" class="settingsbutton" onclick='settings()'></button>
+        </div>
+
+
     </div>
     <div id='home' class="hide">
 
-        <div id="userProfile" class="userProfile">
-            <p id="display_id" class="display_id"></p>
-
+        <div class="hello">
+            <p>heyy all</p>
         </div>
+
+
 
     </div>
     <div id="mysystem" class="hide">
@@ -154,6 +172,7 @@
 
             </div>
             <button id="closetarget1">close</button>
+            <button onclick="attack()">Attack</button>
         </div>
         <div id="target2" class="hide">
             <img src="./targetpics/photos/2.jpg" id="target1pic">
@@ -163,6 +182,7 @@
 
             </div>
             <button id="closetarget2">close</button>
+            <button onclick="attack()">Attack</button>
         </div>
         <div id="target3" class="hide">
             <img src="./targetpics/photos/3.jpg" id="target1pic">
@@ -172,6 +192,7 @@
 
             </div>
             <button id="closetarget3">close</button>
+            <button onclick="attack()">Attack</button>
         </div>
         <div id="target4" class="hide">
             <img src="./targetpics/photos/4.jpg" id="target1pic">
@@ -181,6 +202,7 @@
 
             </div>
             <button id="closetarget4">close</button>
+            <button onclick="attack()">Attack</button>
         </div>
         <div id="target5" class="hide">
             <img src="./targetpics/photos/5.jpg" id="target1pic">
@@ -190,6 +212,7 @@
 
             </div>
             <button id="closetarget5">close</button>
+            <button onclick="attack()">Attack</button>
         </div>
     </div>
 
