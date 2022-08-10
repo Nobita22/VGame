@@ -99,6 +99,13 @@ body {
 #health {
   margin: 0 0 0 5px;
 }
+#totalhealth {
+  margin: 0 0 0 5px;
+  float: left;
+}
+#healthbar {
+  margin: 0 0 0 5px;
+}
 #level {
   margin: 0 0 0 5px;
   color: white;
@@ -106,7 +113,7 @@ body {
 }
 .lefte {
   float: left;
-  width: 200px;
+  width: 230px;
   margin: 0px;
 }
 .righte {
@@ -118,7 +125,7 @@ body {
   display: inline-block;
   margin: 0;
   padding: 0 0 0 0;
-  width: 130px;
+  width: 110px;
   height: 55px;
 }
 
