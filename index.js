@@ -222,7 +222,7 @@ auth.onAuthStateChanged((firebaseUser) => {
         document.getElementById("display_id").innerText = "ID: " + id;
         document.getElementById("healthbar").value = health;
         document.getElementById("totalhealth").innerText = health + "/240";
-        document.getElementById("Money").innerText = "Money: " + Money;
+        document.getElementById("Money").innerText = "Money:$ " + Money;
       },
       function (error) {
         console.log("Error: " + error.code);
