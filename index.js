@@ -643,7 +643,7 @@ function attack(clickedid) {
     alert("no Health");
   }
 
-  if (m > 0) {
+  if (True) {
     var amount = document.getElementById(clickedid).innerHTML;
     newamount = Number(m) + Number(amount);
     firebase
