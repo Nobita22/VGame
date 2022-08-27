@@ -142,9 +142,10 @@ function submitDetails() {
     .set({
       Name: name,
       UserId: ID,
-      health: 240,
+      health: 360,
       Level: 0,
       Money: 0,
+      EXP: 0,
     });
 
   var v = document.getElementById("home");
