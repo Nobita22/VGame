@@ -217,12 +217,16 @@ auth.onAuthStateChanged((firebaseUser) => {
         console.log("all", id);
         health = data[AuthId].health;
         Money = data[AuthId].Money;
+        Level = data[AuthId].Level;
+        EXP = data[AuthId].EXP;
         console.log("Health", health);
         window.localStorage.setItem("userID", id);
         document.getElementById("display_id").innerText = "ID: " + id;
         document.getElementById("healthbar").value = health;
         document.getElementById("totalhealth").innerText = health + "/240";
         document.getElementById("Money").innerText = "Money:$ " + Money;
+        document.getElementById("level").innerText =
+          "Level: " + Level + " (" + EXP + " /10000)";
       },
       function (error) {
         console.log("Error: " + error.code);
@@ -610,7 +614,7 @@ document
 
 //city //
 // home page-------------------------------------------------------------------------------------------------------------------------------------
-function attack(clickedid) {
+function attack(clickedid, idd) {
   deduct = 70;
   firebase
     .database()
@@ -624,6 +628,7 @@ function attack(clickedid) {
         healthfromdata = data[b].health;
         console.log("all1111", healthfromdata);
         m = data[b].Money;
+        Oexp = data[b].EXP;
         console.log("money is:" + m);
         console.log(typeof m);
       },
@@ -636,10 +641,14 @@ function attack(clickedid) {
     console.log(realhealth);
     var amount = document.getElementById(clickedid).innerHTML;
     newamount = Number(m) + Number(amount);
+    var exp = document.getElementById(idd).innerHTML;
+    console.log("kkk" + exp);
+    Uexp = Number(Oexp) + Number(exp);
+    console.log("UPADTEEXP=" + Uexp);
     firebase
       .database()
       .ref("users/" + b)
-      .update({ health: realhealth, Money: newamount });
+      .update({ health: realhealth, Money: newamount, EXP: Uexp });
     // healthfromdata = id;
   } else {
     alert("no Health");
