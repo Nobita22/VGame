@@ -634,22 +634,12 @@ function attack(clickedid) {
   if (healthfromdata > deduct) {
     realhealth = healthfromdata - deduct;
     console.log(realhealth);
-    firebase
-      .database()
-      .ref("users/" + b)
-      .update({ health: realhealth });
-    // healthfromdata = id;
-  } else {
-    alert("no Health");
-  }
-
-  if (m > 0) {
     var amount = document.getElementById(clickedid).innerHTML;
     newamount = Number(m) + Number(amount);
     firebase
       .database()
       .ref("users/" + b)
-      .update({ Money: newamount });
+      .update({ health: realhealth, Money: newamount });
     // healthfromdata = id;
   } else {
     alert("no Health");
