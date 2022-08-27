@@ -142,6 +142,8 @@ function submitDetails() {
     .set({
       Name: name,
       UserId: ID,
+      health: 240,
+      Money: 0,
     });
 
   var v = document.getElementById("home");
@@ -214,11 +216,13 @@ auth.onAuthStateChanged((firebaseUser) => {
         id = data[AuthId].UserId;
         console.log("all", id);
         health = data[AuthId].health;
+        Money = data[AuthId].Money;
         console.log("Health", health);
         window.localStorage.setItem("userID", id);
         document.getElementById("display_id").innerText = "ID: " + id;
         document.getElementById("healthbar").value = health;
         document.getElementById("totalhealth").innerText = health + "/240";
+        document.getElementById("Money").innerText = "Money: " + Money;
       },
       function (error) {
         console.log("Error: " + error.code);
@@ -606,7 +610,7 @@ document
 
 //city //
 // home page-------------------------------------------------------------------------------------------------------------------------------------
-function attack() {
+function attack(clickedid) {
   deduct = 70;
   firebase
     .database()
@@ -619,6 +623,9 @@ function attack() {
         console.log("list111", list);
         healthfromdata = data[b].health;
         console.log("all1111", healthfromdata);
+        m = data[b].Money;
+        console.log("money is:" + m);
+        console.log(typeof m);
       },
       function (error) {
         console.log("Error: " + error.code);
@@ -631,6 +638,18 @@ function attack() {
       .database()
       .ref("users/" + b)
       .update({ health: realhealth });
+    // healthfromdata = id;
+  } else {
+    alert("no Health");
+  }
+
+  if (m > 0) {
+    var amount = document.getElementById(clickedid).innerHTML;
+    newamount = Number(m) + Number(amount);
+    firebase
+      .database()
+      .ref("users/" + b)
+      .update({ Money: newamount });
     // healthfromdata = id;
   } else {
     alert("no Health");

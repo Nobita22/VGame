@@ -66,7 +66,7 @@
             <label style="color:white;" id="totalhealth" for="health"></label>
         </div>
         <div class="centere">
-            <p style="margin:0 0 0 0;color: white;float: left;">money:00</p></br>
+            <p id="Money" style="margin:0 0 0 0;color: white;float: left;"></p></br>
             <p style="margin:0 0 0 0;color: white;float: left;padding-top: 8px;">money:00</p>
         </div>
         <div class="righte">
@@ -167,50 +167,60 @@
             <div class="target1container">
                 <h4><b>John Doe</b></h4>
                 <p>Architect & Engineer</p>
+                <p>Monet:</p>
+                <p id="target1Money">100</p>
 
             </div>
             <button id="closetarget1">close</button>
-            <button onclick="attack()">Attack</button>
+            <button id="target1Money" onclick="attack(this.id)">Attack</button>
         </div>
         <div id="target2" class="hide">
             <img src="./targetpics/photos/2.jpg" id="target1pic">
-            <div class="target1container">
+            <div class="target2container">
                 <h4><b>John Doe</b></h4>
                 <p>Architect & Engineer</p>
+                <p>Monet:</p>
+                <p id="target2Money">200</p>
 
             </div>
             <button id="closetarget2">close</button>
-            <button onclick="attack()">Attack</button>
+            <button id="target2Money" onclick="attack(this.id)">Attack</button>
         </div>
         <div id="target3" class="hide">
             <img src="./targetpics/photos/3.jpg" id="target1pic">
-            <div class="target1container">
+            <div class="target3container">
                 <h4><b>John Doe</b></h4>
                 <p>Architect & Engineer</p>
+                <p>Monet:</p>
+                <p id="target3Money">300</p>
 
             </div>
             <button id="closetarget3">close</button>
-            <button onclick="attack()">Attack</button>
+            <button id="target3Money" onclick="attack(this.id)">Attack</button>
         </div>
         <div id="target4" class="hide">
             <img src="./targetpics/photos/4.jpg" id="target1pic">
-            <div class="target1container">
+            <div class="target4container">
                 <h4><b>John Doe</b></h4>
                 <p>Architect & Engineer</p>
+                <p>Monet:</p>
+                <p id="target4Money">400</p>
 
             </div>
             <button id="closetarget4">close</button>
-            <button onclick="attack()">Attack</button>
+            <button id="target4Money" onclick="attack(this.id)">Attack</button>
         </div>
         <div id="target5" class="hide">
             <img src="./targetpics/photos/5.jpg" id="target1pic">
-            <div class="target1container">
+            <div class="target5container">
                 <h4><b>John Doe</b></h4>
                 <p>Architect & Engineer</p>
+                <p>Monet:</p>
+                <p id="target5Money">500</p>
 
             </div>
             <button id="closetarget5">close</button>
-            <button onclick="attack()">Attack</button>
+            <button id="target5Money" onclick="attack(this.id)">Attack</button>
         </div>
     </div>
 
