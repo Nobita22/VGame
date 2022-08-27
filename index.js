@@ -143,6 +143,7 @@ function submitDetails() {
       Name: name,
       UserId: ID,
       health: 240,
+      Level: 0,
       Money: 0,
     });
 
@@ -227,11 +228,34 @@ auth.onAuthStateChanged((firebaseUser) => {
         document.getElementById("Money").innerText = "Money:$ " + Money;
         document.getElementById("level").innerText =
           "Level: " + Level + " (" + EXP + " /10000)";
+        if (Number(Level) == 2) {
+          var v = document.getElementById("home");
+          v.style.display = "none";
+          var v = document.getElementById("CCity");
+          v.style.display = "block";
+          var v = document.getElementById("log");
+          v.style.display = "none";
+          var v = document.getElementById("chat");
+          v.style.display = "none";
+          var v = document.getElementById("mysystem");
+          v.style.display = "none";
+          var v = document.getElementById("crew");
+          v.style.display = "none";
+          var v = document.getElementById("place1div");
+          v.style.display = "none";
+
+          document.getElementById("place1").removeAttribute("onclick");
+
+          console.log("LLLL" + Number(Level));
+          var v = document.getElementById("place1");
+          v.innerHTML = "COMPLETED";
+        }
       },
       function (error) {
         console.log("Error: " + error.code);
       }
     );
+
     return id;
   }
   console.log("out of if", id);
@@ -615,6 +639,7 @@ document
 //city //
 // home page-------------------------------------------------------------------------------------------------------------------------------------
 function attack(clickedid, idd) {
+  console.clear();
   deduct = 70;
   firebase
     .database()
@@ -629,6 +654,7 @@ function attack(clickedid, idd) {
         console.log("all1111", healthfromdata);
         m = data[b].Money;
         Oexp = data[b].EXP;
+        level = data[b].Level;
         console.log("money is:" + m);
         console.log(typeof m);
       },
@@ -636,6 +662,7 @@ function attack(clickedid, idd) {
         console.log("Error: " + error.code);
       }
     );
+
   if (healthfromdata > deduct) {
     realhealth = healthfromdata - deduct;
     console.log(realhealth);
@@ -649,9 +676,21 @@ function attack(clickedid, idd) {
       .database()
       .ref("users/" + b)
       .update({ health: realhealth, Money: newamount, EXP: Uexp });
+    if (Uexp >= 10000) {
+      console.log("LEVELD UP");
+      alert("LEVELED UP");
+      newlevel = Number(level) + 1;
+      exp = 0;
+      firebase
+        .database()
+        .ref("users/" + b)
+        .update({ Level: newlevel, EXP: exp });
+    }
+
     // healthfromdata = id;
   } else {
     alert("no Health");
   }
 }
+
 // home page------------------------------------------------------------------------------------------------------------------------------------
