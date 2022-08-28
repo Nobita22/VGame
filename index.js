@@ -230,7 +230,7 @@ auth.onAuthStateChanged((firebaseUser) => {
         console.log("Health", health);
         window.localStorage.setItem("userID", id);
         document.getElementById("display_id").innerText = "ID: " + id;
-        document.getElementById("healthbar").value = health;
+        // document.getElementById("healthbar").value = health;
         document.getElementById("totalhealth").innerText = health + "/360";
         document.getElementById("Money").innerText = "Money:$ " + Money;
         document.getElementById("level").innerText =
