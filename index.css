@@ -207,6 +207,77 @@ body {
     display: flex;
     justify-content: space-around;
 }*/
+
+/* @media screen and (min-width: 360px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+    margin-left: 30px;
+  }
+
+  .box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+    margin-left: 500px;
+    text-align: center;
+  }
+
+  .box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    text-align: center;
+  }
+} */
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 3600px) {
+  .wrapper button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 40px;
+    font-size: 100%;
+    text-align: center;
+    margin: 20px;
+    margin-top: 0;
+    width: 250px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .wrapper button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 40px;
+
+    text-align: center;
+    margin: 15px;
+    margin-top: 0;
+    width: 150px;
+    height: 110px;
+  }
+}
+
 /*------------------------------------------------------------home.html------------------------------------------------------------*/
 .logoutbutton {
   border: none;

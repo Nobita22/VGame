@@ -9,6 +9,23 @@
     <link rel="manifest" href="manifest.json">
 
     <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.1/dist/ResizeObserver.js"></script>
+
+    <!-- 💁 OPTIONAL: Fullscreen polyfill is required for experimental AR features in Canary -->
+    <!--<script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>-->
+
+    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
+    <!--<script src="https://unpkg.com/@magicleap/prismatic@0.18.2/prismatic.min.js"></script>-->
 </head>
 
 <body id="body">
@@ -78,17 +95,103 @@
     </div>
     <div id='home' class="hide">
 
-        <div class="hello">
-            <h1>Home page....</h1>
-        </div>
+        <div id="menu">
+            <h1>MENU</h1>
+            <div class="wrapper">
 
+                <button onclick="openBC()">BLACK CITY</button>
+                <button onclick="openS()">SHOP</button><br>
+                <button onclick="openM()">MARKET</button>
+                <button onclick="openP()">PETS</button><br>
+                <button onclick="openI()">INVENTORY</button>
+                <button onclick="openC()">COLLECTIONS</button><br>
+                <button onclick="openN()">NEWS</button>
+                <button onclick="openR()">RANK</button>
+            </div>
+        </div>
+        <div id="menuitems" style="display: none;">
+            <div id="blackCity">
+                <h1>BLACK CITY</h1>
+            </div>
+            <div id="shop">
+                <h1>SHOP</h1>
+            </div>
+            <div id="market">
+                <h1>MARKET</h1>
+            </div>
+            <div id="pets">
+                <h1>PETS</h1>
+            </div>
+            <div id="inventory">
+                <h1>INVENTORY</h1>
+            </div>
+            <div id="collections">
+                <h1>COLLECTIONS</h1>
+            </div>
+            <div id="news">
+                <h1>NEWS</h1>
+            </div>
+            <div id="rank">
+                <h1>RANK</h1>
+            </div>
+
+        </div>
 
 
     </div>
     <div id="mysystem" class="hide">
         <center>
-            <h1>MYSYSTEM SCREEN....</h1>
+            <h1>AVATAR / STATS</h1>
         </center>
+        <!-- <div class="mode" style="display: in-line;">
+            <model-viewer environment-image="studio_small_07_1k.hdr" camera-controls auto-rotate src="avatar.glb"
+                alt="A 3D model of an astronaut" shadow-intensity="1" stage-light-intensity="3"
+                environment-intensity="2">
+            </model-viewer>
+
+            <p>name</p>
+
+        </div> -->
+        <div class="flex-parent-element">
+            <div class="flex-child-element magenta">
+                <model-viewer environment-image="studio_small_07_1k.hdr" camera-controls auto-rotate src="avatar.glb"
+                    alt="A 3D model of an astronaut" shadow-intensity="1" stage-light-intensity="3"
+                    environment-intensity="2">
+                </model-viewer>
+            </div>
+            <div class="flex-child-element green">
+                <p id="displayid" style="color: black;">ID:</p><br>
+            </div>
+        </div>
+        <style>
+            model-viewer {
+                width: 200px;
+                height: 400px;
+                background-color: blueviolet;
+            }
+
+            .mode {
+                background-color: blueviolet;
+                margin-top: 0;
+                padding-top: 0;
+            }
+
+            .flex-parent-element {
+                display: flex;
+                width: 50%;
+            }
+
+            .flex-child-element {
+                flex: 1;
+                border: 2px solid blueviolet;
+                margin: 10px;
+            }
+
+            .flex-child-element:first-child {
+                margin-right: 20px;
+            }
+        </style>
+
     </div>
     <div id="crew" class="hide">
         <center>
@@ -131,13 +234,12 @@
     </div>
     <div id="navbar" class="hide">
         <div id="nav_buttons" class=" nav_buttons">
-            <button id="mysystem" onClick="mysystem()">MY SYSTEM </button>
+            <button id="mysystem" onClick="mysystem()">MY SELF </button>
             <!--onClick='loadHtml("screens","mysystem.html")'-->
             <button id="crew" onClick="crew()">CREW </button>
             <button onClick='CCity()'>Cyber City </button>
             <button id="log" onClick='log()'>LOG</button>
-            <button id="chat" onClick='chat()'>
-                CHAT</button>
+            <button id="chat" onClick='chat()'>CHAT</button>
         </div>
         <div id="home">
             <button id="home_button" onClick='home()'>HOME</button>
@@ -242,6 +344,15 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 💁 Include both scripts below to support all browsers! -->
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+    </script>
+
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+    </script>
 </body>
 <script src="index.js"></script>
 <script>

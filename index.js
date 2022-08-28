@@ -150,6 +150,9 @@ function submitDetails() {
 
   var v = document.getElementById("home");
   v.style.display = "block";
+  var v = document.getElementById("menu");
+  v.style.display = "block";
+
   var v = document.getElementById("forms-out");
   v.style.display = "none";
   var v = document.getElementById("top-stats");
@@ -190,6 +193,9 @@ auth.onAuthStateChanged((firebaseUser) => {
 
       var v = document.getElementById("home");
       v.style.display = "block";
+
+      var v = document.getElementById("menuitems");
+      v.style.display = "none";
       var v = document.getElementById("forms-out");
       v.style.display = "none";
       var v = document.getElementById("top-stats");
@@ -315,6 +321,8 @@ function backtohome() {
   v.style.display = "none";
 }
 function mysystem() {
+  a = window.localStorage.getItem("userID");
+  document.getElementById("displayid").innerText = "ID: " + a;
   var v = document.getElementById("place1div");
   v.style.display = "none";
   var v = document.getElementById("home");
@@ -409,6 +417,10 @@ function home() {
   v.style.display = "none";
   var v = document.getElementById("crew");
   v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "none";
+  var v = document.getElementById("menu");
+  v.style.display = "block";
 }
 function signOut() {
   window.localStorage.clear();
@@ -693,5 +705,180 @@ function attack(clickedid, idd) {
     alert("no Health");
   }
 }
-
+function openBC() {
+  var v = document.getElementById("menu");
+  v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "block";
+  var v = document.getElementById("blackCity");
+  v.style.display = "block";
+  var v = document.getElementById("shop");
+  v.style.display = "none";
+  var v = document.getElementById("market");
+  v.style.display = "none";
+  var v = document.getElementById("pets");
+  v.style.display = "none";
+  var v = document.getElementById("inventory");
+  v.style.display = "none";
+  var v = document.getElementById("collections");
+  v.style.display = "none";
+  var v = document.getElementById("news");
+  v.style.display = "none";
+  var v = document.getElementById("rank");
+  v.style.display = "none";
+}
+function openS() {
+  var v = document.getElementById("menu");
+  v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "block";
+  var v = document.getElementById("blackCity");
+  v.style.display = "none";
+  var v = document.getElementById("shop");
+  v.style.display = "block";
+  var v = document.getElementById("market");
+  v.style.display = "none";
+  var v = document.getElementById("pets");
+  v.style.display = "none";
+  var v = document.getElementById("inventory");
+  v.style.display = "none";
+  var v = document.getElementById("collections");
+  v.style.display = "none";
+  var v = document.getElementById("news");
+  v.style.display = "none";
+  var v = document.getElementById("rank");
+  v.style.display = "none";
+}
+function openM() {
+  var v = document.getElementById("menu");
+  v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "block";
+  var v = document.getElementById("blackCity");
+  v.style.display = "none";
+  var v = document.getElementById("shop");
+  v.style.display = "none";
+  var v = document.getElementById("market");
+  v.style.display = "block";
+  var v = document.getElementById("pets");
+  v.style.display = "none";
+  var v = document.getElementById("inventory");
+  v.style.display = "none";
+  var v = document.getElementById("collections");
+  v.style.display = "none";
+  var v = document.getElementById("news");
+  v.style.display = "none";
+  var v = document.getElementById("rank");
+  v.style.display = "none";
+}
+function openP() {
+  var v = document.getElementById("menu");
+  v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "block";
+  var v = document.getElementById("blackCity");
+  v.style.display = "none";
+  var v = document.getElementById("shop");
+  v.style.display = "none";
+  var v = document.getElementById("market");
+  v.style.display = "none";
+  var v = document.getElementById("pets");
+  v.style.display = "block";
+  var v = document.getElementById("inventory");
+  v.style.display = "none";
+  var v = document.getElementById("collections");
+  v.style.display = "none";
+  var v = document.getElementById("news");
+  v.style.display = "none";
+  var v = document.getElementById("rank");
+  v.style.display = "none";
+}
+function openI() {
+  var v = document.getElementById("menu");
+  v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "block";
+  var v = document.getElementById("blackCity");
+  v.style.display = "none";
+  var v = document.getElementById("shop");
+  v.style.display = "none";
+  var v = document.getElementById("market");
+  v.style.display = "none";
+  var v = document.getElementById("pets");
+  v.style.display = "none";
+  var v = document.getElementById("inventory");
+  v.style.display = "block";
+  var v = document.getElementById("collections");
+  v.style.display = "none";
+  var v = document.getElementById("news");
+  v.style.display = "none";
+  var v = document.getElementById("rank");
+  v.style.display = "none";
+}
+function openC() {
+  var v = document.getElementById("menu");
+  v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "block";
+  var v = document.getElementById("blackCity");
+  v.style.display = "none";
+  var v = document.getElementById("shop");
+  v.style.display = "none";
+  var v = document.getElementById("market");
+  v.style.display = "none";
+  var v = document.getElementById("pets");
+  v.style.display = "none";
+  var v = document.getElementById("inventory");
+  v.style.display = "none";
+  var v = document.getElementById("collections");
+  v.style.display = "block";
+  var v = document.getElementById("news");
+  v.style.display = "none";
+  var v = document.getElementById("rank");
+  v.style.display = "none";
+}
+function openN() {
+  var v = document.getElementById("menu");
+  v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "block";
+  var v = document.getElementById("blackCity");
+  v.style.display = "none";
+  var v = document.getElementById("shop");
+  v.style.display = "none";
+  var v = document.getElementById("market");
+  v.style.display = "none";
+  var v = document.getElementById("pets");
+  v.style.display = "none";
+  var v = document.getElementById("inventory");
+  v.style.display = "none";
+  var v = document.getElementById("collections");
+  v.style.display = "none";
+  var v = document.getElementById("news");
+  v.style.display = "block";
+  var v = document.getElementById("rank");
+  v.style.display = "none";
+}
+function openR() {
+  var v = document.getElementById("menu");
+  v.style.display = "none";
+  var v = document.getElementById("menuitems");
+  v.style.display = "block";
+  var v = document.getElementById("blackCity");
+  v.style.display = "none";
+  var v = document.getElementById("shop");
+  v.style.display = "none";
+  var v = document.getElementById("market");
+  v.style.display = "none";
+  var v = document.getElementById("pets");
+  v.style.display = "none";
+  var v = document.getElementById("inventory");
+  v.style.display = "none";
+  var v = document.getElementById("collections");
+  v.style.display = "none";
+  var v = document.getElementById("news");
+  v.style.display = "none";
+  var v = document.getElementById("rank");
+  v.style.display = "block";
+}
 // home page------------------------------------------------------------------------------------------------------------------------------------
