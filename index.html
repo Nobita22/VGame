@@ -86,10 +86,10 @@
             <p id="Money" style="margin:0 0 0 0;color: white;float: left; width: 160px;"></p></br>
             <p style="margin:0 0 0 0;color: white;float: left;padding-top: 8px;width: 160px;">USD:0</p>
         </div>
-        <div class="righte">
+        <!-- <div class="righte">
 
             <button id="settingsbutton" class="settingsbutton" onclick='settings()'></button>
-        </div>
+        </div> -->
 
 
     </div>
@@ -108,6 +108,7 @@
                 <button onclick="openN()">NEWS</button>
                 <button onclick="openR()">RANK</button>
             </div>
+
         </div>
         <div id="menuitems" style="display: none;">
             <div id="blackCity">
@@ -139,10 +140,12 @@
 
 
     </div>
-    <div id="mysystem" class="hide">
-        <center>
-            <h1>AVATAR / STATS</h1>
-        </center>
+    <div id="mysystem" style="margin-top: -19px;" class="hide">
+        <div id="settingsbar"><button id="settingsbutton" onclick='settings()'></button>
+            <center>
+                <h1>AVATAR / STATS</h1>
+            </center>
+        </div>
         <!-- <div class="mode" style="display: in-line;">
             <model-viewer environment-image="studio_small_07_1k.hdr" camera-controls auto-rotate src="avatar.glb"
                 alt="A 3D model of an astronaut" shadow-intensity="1" stage-light-intensity="3"
